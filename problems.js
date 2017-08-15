@@ -21,3 +21,18 @@ var arr = [1,2,5,2,4,1,2,1];
 arr = arr.filter( function( item, index, inputArray ) {
            return inputArray.indexOf(item) == index;
     });
+
+// Take in a string and print out the words and how many time each is used
+
+function wordCount(str){
+  const cleanString = str.replace(/[^a-zA-Z 0-9]+/g,'').trim();
+  const words = cleanString.split(' ');
+  const wordCounts = {};
+    words.forEach(word => {
+      const lowerCasedWord = word.toLowerCase();
+      wordCounts[lowerCasedWord] = wordCounts[lowerCasedWord] || 0;
+      wordCounts[lowerCasedWord]++;
+  })
+
+  console.log(wordCounts);
+    };
