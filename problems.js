@@ -1,6 +1,6 @@
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
 
-var sum = 0;
+let sum = 0;
 for(let i = 0; i < 1000; i++){
   if(i % 3 ===0 || i % 5 === 0){
     sum += i;
@@ -16,9 +16,9 @@ function reverseANumber(num){
 
 // Javascript function to remove duplicates from array
 
-var arr = [1,2,5,2,4,1,2,1];
+let arr = [1,2,5,2,4,1,2,1];
 
-arr = arr.filter( function( item, index, inputArray ) {
+arr = arr.filter(function(item, index, inputArray) {
            return inputArray.indexOf(item) == index;
     });
 
@@ -61,6 +61,22 @@ function longestWord(str){
   }
   return longestWord;
 }
+
+// Factorialize a number
+
+function factorial(num){
+  let array = [];
+  for(let i = 0; i <= num; i++){
+    array.push(i);
+  }
+
+  let answer = array.reduce(function(a,b){
+    return a * b;
+  })
+
+  return answer;
+}
+
 
 
 
