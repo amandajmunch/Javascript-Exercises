@@ -6,6 +6,7 @@ for(let i = 0; i < 1000; i++){
     sum += i;
   }
 }
+
 console.log(sum);
 
 // JavaScript function that reverse a number.
@@ -20,7 +21,7 @@ let arr = [1,2,5,2,4,1,2,1];
 
 arr = arr.filter(function(item, index, inputArray) {
            return inputArray.indexOf(item) == index;
-    });
+});
 
 // Take in a string and print out the words and how many time each is used
 
@@ -46,7 +47,6 @@ function reverseString(str) {
   }
     return newString;
 }
-reverseString('hello');
 
 
 // Find longest word in a string
