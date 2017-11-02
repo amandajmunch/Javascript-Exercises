@@ -35,7 +35,7 @@ function wordCount(str){
   })
 
   console.log(wordCounts);
-    };
+};
 
 
 // Reverse a string
