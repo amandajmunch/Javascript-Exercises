@@ -1,8 +1,8 @@
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
 
 let sum = 0;
-for(let i = 0; i < 1000; i++){
-  if(i % 3 ===0 || i % 5 === 0){
+for (let i = 0; i < 1000; i++){
+  if (i % 3 ===0 || i % 5 === 0){
     sum += i;
   }
 }
@@ -66,7 +66,7 @@ function longestWord(str){
 
 function factorial(num){
   let array = [];
-  for(let i = 0; i <= num; i++){
+  for (let i = 0; i <= num; i++){
     array.push(i);
   }
 
@@ -76,6 +76,90 @@ function factorial(num){
 
   return answer;
 }
+
+// Is the word a palindrome
+
+function palindrome(str){
+  str = str.toLowerCase().replace(/[\W_]/g,'');
+  if (str === str.split("").reverse().join('')){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Find the longest word in a string
+
+function longest(str){
+  let longest = 0;
+  str.split(' ').forEach(function(word){
+    if (word.length > longest){
+      longest = word.length;
+    }
+  });
+  return longest;
+}
+
+//  Convert number into roman numeral
+
+function romanNumeral(num){
+  var romans = {
+    M : 1000,
+    CM: 900
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1
+  };
+
+  let result = '';
+  for (let key in romans){
+    if (num >= romans[key]){
+      result += key.repeat(Math.trunc(num / romans[key]));
+      num -= romans[key] * Math.trunc(num / romans[key]);
+    }
+  }
+  return result;
+}
+
+
+// Given a node, find its successor. If none, return null
+
+BinarySearchTree.prototype.findInOrderSuccessor = function(inputNode) {
+
+  current = inputNode
+  if (!inputNode){
+    return null;
+  }
+
+  if (inputNode.right){
+    var current = inputNode.right;
+
+    while (current.left){
+      current = current.left;
+
+    }
+    return current;
+  }else {
+    var current = current.parent;
+
+
+    while (current.parent && current.parent.left !== current){
+      current = current.parent;
+    }
+    return current.parent;
+  }
+  return null;
+}
+
+
 
 
 
