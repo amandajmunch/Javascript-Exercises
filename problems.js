@@ -130,7 +130,7 @@ function romanNumeral(num){
 }
 
 
-// Given a node, find its successor. If none, return null
+// Given a node in a binary tree, find its successor
 
 BinarySearchTree.prototype.findInOrderSuccessor = function(inputNode) {
 
@@ -144,12 +144,12 @@ BinarySearchTree.prototype.findInOrderSuccessor = function(inputNode) {
 
     while (current.left){
       current = current.left;
-
     }
-    return current;
-  }else {
-    var current = current.parent;
 
+    return current;
+
+  } else {
+    var current = current.parent;
 
     while (current.parent && current.parent.left !== current){
       current = current.parent;
