@@ -52,7 +52,7 @@ function reverseString(str) {
 // Find longest word in a string
 
 function longestWord(str){
-  let words = string.split(' ');
+  let words = str.split(' ');
   let longestWord = 0;
   for (var i = 0; i < words.length; i++){
     if (words[i].length > longestWord){
@@ -159,7 +159,20 @@ BinarySearchTree.prototype.findInOrderSuccessor = function(inputNode) {
   return null;
 }
 
+// Find the number of days in-between two dates
 
+function daysBetween(date1, date2){
+  function toTimestamp(date){
+    let month = 30;
+    let year = 365;
+    let totalDays = date.day + (date.month * month) + (date.year * year);
+    return total days;
+  }
+
+  let difference = toTimestamp(date1) - toTimestamp(date2);
+
+  return Math.abs(difference);
+}
 
 
 
