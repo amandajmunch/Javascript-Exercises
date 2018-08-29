@@ -62,6 +62,19 @@ function longestWord(str){
   return longestWord;
 }
 
+// Find the longest word in a string using forEach
+
+function longest(str){
+  let longest = 0;
+  str.split(' ').forEach(function(word){
+    if (word.length > longest){
+      longest = word.length;
+    }
+  });
+  return longest;
+}
+
+
 // Factorialize a number
 
 function factorial(num){
@@ -86,18 +99,6 @@ function palindrome(str){
   } else {
     return false;
   }
-}
-
-// Find the longest word in a string
-
-function longest(str){
-  let longest = 0;
-  str.split(' ').forEach(function(word){
-    if (word.length > longest){
-      longest = word.length;
-    }
-  });
-  return longest;
 }
 
 //  Convert number into roman numeral
